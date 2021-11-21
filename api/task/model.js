@@ -12,7 +12,7 @@ function getAll() {
 function create(task) {
     return db('tasks')
       .insert(task)
-      .then(ids => ({ id: ids[0] }));
+      .then(ids => ({ task_id: ids[0] }));
 };
 
 module.exports = {

@@ -7,7 +7,7 @@ router.get('/api/resources', (req,res) => {
     //
     Resources.getAll()
     .then(resource => {
-        res.status(200).json(resource)
+        res.json(resource)
     })
     .catch(err => {
         res.status(500).json({message: "no resources found", error: err})

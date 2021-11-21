@@ -2,13 +2,13 @@
 const db = require('../../data/dbConfig');
 
 function getAll() {
-    return db('projects');
+    return db('projects').select('*');
 };
 
 function create(project) {
     return db('projects')
       .insert(project)
-      .then(ids => ({ id: ids[0] }));
+      .then(ids => ({ project_id: ids[0] }));
 };
 
 module.exports = {
